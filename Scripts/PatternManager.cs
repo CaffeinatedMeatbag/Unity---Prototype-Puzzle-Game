@@ -41,7 +41,7 @@ public class PatternManager : MonoBehaviour {
     }
 
     void AssignColorToTiles () {
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 12; i++) {
             bool IsActive = Sequence.CurrentSequence[i] == 1;
 
             Tiles[i].color = (IsActive) ?

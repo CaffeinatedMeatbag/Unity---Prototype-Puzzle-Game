@@ -37,8 +37,10 @@ public class TimeManager : MonoBehaviour {
     }
 
     void OnAddTime (float amount) {
-        TimeRemaining += amount;
-        UpdateTimeUGUI ();
+        if (TimeRemaining != 0) {
+            TimeRemaining += amount;
+            UpdateTimeUGUI ();
+        }
     }
 
     void UpdateTimeUGUI () {

@@ -28,33 +28,33 @@ public class Sequence {
     }
 
     List<int> ZeroSequence () {
-        return new List<int> (9) { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        return new List<int> (12) { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
 
     List<int> NewRandomSequence () {
         previousSequence = new List<int> (CurrentSequence);
 
-        List<int> a = Enumerable.Range (0, 9).ToList ();
-        List<int> b = ZeroSequence ();
+        List<int> listToShuffle = Enumerable.Range (0, 12).ToList ();
+        List<int> newRandomSequence = ZeroSequence ();
 
-        int numberOfTilesToActivate = rnd.Next (3, 8);
+        int numberOfTilesToActivate = rnd.Next (4, 9);
 
-        Shuffle (a);
+        Shuffle (listToShuffle);
 
         for (int i = 0; i < numberOfTilesToActivate; i++) {
-            b[a[i]] = 1;
+            newRandomSequence[listToShuffle[i]] = 1;
         }
 
-        return b;
+        return newRandomSequence;
     }
 
-    void Shuffle<T> (IList<T> array) {
-        for (int i = array.Count; i > 1;) {
+    void Shuffle<T> (IList<T> list) {
+        for (int i = list.Count; i > 1;) {
             int j = rnd.Next (i);
             --i;
-            T temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
+            T temp = list[i];
+            list[i] = list[j];
+            list[j] = temp;
         }
     }
 }

@@ -54,9 +54,9 @@ public class BoardManager : MonoBehaviour {
             Canvas.blocksRaycasts = !Canvas.blocksRaycasts;
             yield return new WaitForSeconds (0.25f);
             Canvas.blocksRaycasts = !Canvas.blocksRaycasts;
-
+  
             OnSolved (1);
-            OnAddTime (1.5f);
+            OnAddTime (2f);
 
             GenerateNewBoard ();
             Manager.Instance.PatternManager.GenerateNewPattern ();

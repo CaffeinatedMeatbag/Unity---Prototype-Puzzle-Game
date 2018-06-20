@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour {
     public BoardManager BoardManager;
     public PatternManager PatternManager;
     public SolvedManager SolvedManager;
+    public TimeManager TimeManager;
 
     public static Manager Instance {
         get { return instance; }
@@ -25,11 +26,11 @@ public class Manager : MonoBehaviour {
         DontDestroyOnLoad (gameObject);
     }
 
-    void SetCameraBackgroundColor () {
-        Camera.main.backgroundColor = CurrentPalette.BackgroundColor;
-    }
-
     void Start () {
         SetCameraBackgroundColor ();
+    }
+
+    void SetCameraBackgroundColor () {
+        Camera.main.backgroundColor = CurrentPalette.BackgroundColor;
     }
 }
